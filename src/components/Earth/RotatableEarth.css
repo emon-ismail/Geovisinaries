@@ -1,0 +1,48 @@
+.earth-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden; /* Hide overflow to prevent scrollbars */
+  }
+  
+  .dotted-circle {
+    position: absolute;
+    width: 70%;
+    height: 82%;
+    border: 2px dashed rgb(255, 255, 255); /* Use dashed to control spacing */
+    border-radius: 50%;
+    /* z-index: 1; */
+    pointer-events: none; /* Ensures it doesn't interfere with interactions */
+    box-sizing: border-box; /* Ensures the dash spacing is consistent */
+    
+    /* Add rotation animation */
+    animation: rotate 260s linear infinite;
+  }
+  
+  /* Keyframes for rotation */
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Media Queries for smaller screens */
+  @media (max-width: 768px) {
+    .dotted-circle {
+      width: 60%; /* Adjust width for smaller screens */
+      height: 90%; /* Adjust height for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .dotted-circle {
+      width: 88%; /* Further adjust for very small screens */
+      height: 84%;
+    }
+  }
+  
